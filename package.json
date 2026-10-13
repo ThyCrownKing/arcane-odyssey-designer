@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "fetch:wiki": "node scripts/fetchWikiItems.mjs",
+    "fetch:reddit": "node scripts/fetchRedditThreads.mjs",
+    "normalize:data": "node scripts/normalizeItems.mjs",
+    "refresh:data": "npm run fetch:wiki && npm run fetch:reddit && npm run normalize:data"
   },
   "dependencies": {
     "@react-three/drei": "^9.114.0",
